@@ -31,6 +31,10 @@ int main() {
     //Plan specific fields
     planSpecification.plan_id = "cmd-lauv-xplore-1";    // The plan’s identifier.
     planSpecification.start_man_id = "1";               // Indicates the id of the starting maneuver for this plan.
+    
+
+    //TODO: Specify maneuvers
+    
 
     int size = planSpecification.getSerializationSize();                    // calculate bytes required for serialization
     char buffer[size];                                                      // allocate same number of bytes
@@ -38,6 +42,8 @@ int main() {
         
     DatagramSocket socket(6001, localhost, true, true);         // see https://github.com/butcherg/DatagramSocket
     socket.sendTo(buffer, size, localhost);                     // send message to 127.0.0.1:6002
+
+    //TODO: Functionality for writing message to JSON file
 
     std::cout << "Message sent to LAUV-EXPLORE-1" << std::endl;
 }
