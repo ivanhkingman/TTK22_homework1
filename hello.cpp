@@ -17,33 +17,26 @@ int main() {
     abort.setSource(16652);
     abort.setTimeStamp(0);
     abort.setDestinationEntity(255);
-
-    PlanSpecification planSpec;
     
-
-    /*
     PlanSpecification planSpecification;
 
     //Message fields
     planSpecification.setTimeStamp(1234);               // Seconds since 01-jan-1970                      
     planSpecification.setDestination(LAUVXPLORE1);      // specify destination (otherwise DUNE will reject it)
-    planSpecification.setSource(16652);                // The Source IMC system ID.
-    planSpecification.setSourceEntity(44);             // The entity generating this message at the source address.
+    planSpecification.setSource(16652);                 // The Source IMC system ID.
+    planSpecification.setSourceEntity(44);              // The entity generating this message at the source address.
     planSpecification.setDestinationEntity(255);        // The entity that should process this message at the destination address.
 
     //Plan specific fields
     planSpecification.plan_id = "cmd-lauv-xplore-1";    // The plan’s identifier.
     planSpecification.start_man_id = "1";               // Indicates the id of the starting maneuver for this plan.
 
-    int size = planSpecification.getSerializationSize();    // calculate bytes required for serialization
-    */
-
-    int size = abort.getSerializationSize();
-    char buffer[size];                          // allocate same number of bytes
-    Packet::serialize(&abort, (uint8_t *) buffer, size);    // serialize message
+    int size = planSpecification.getSerializationSize();                    // calculate bytes required for serialization
+    char buffer[size];                                                      // allocate same number of bytes
+    Packet::serialize(&planSpecification, (uint8_t *) buffer, size);        // serialize message
         
-    DatagramSocket socket(6002, localhost, true, true);     // see https://github.com/butcherg/DatagramSocket
-    socket.sendTo(buffer, size, localhost);                 // send message to 127.0.0.1:6002
+    DatagramSocket socket(6001, localhost, true, true);         // see https://github.com/butcherg/DatagramSocket
+    socket.sendTo(buffer, size, localhost);                     // send message to 127.0.0.1:6002
 
     std::cout << "Message sent to LAUV-EXPLORE-1" << std::endl;
 }
