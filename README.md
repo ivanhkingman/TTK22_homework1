@@ -1,12 +1,17 @@
 # Homework submission for TTK22: IMC messaging
 
+# Disclaimer
+
+This repository contains IMC source code from the LSTS open source Software Toolchain.
+
+
+
 # Prerequisites
 
 cmake
 
 Neptus
 
-Dune
 
 # Instructions
 
@@ -23,7 +28,7 @@ cd path/to/neptus/neptus/develop
 ./neptus.sh
 ```
 
-then in the Neptus GUI menu select: Systems > LAUV-Xplore-1
+then in the Neptus GUI menu select: Systems > LAUV-Xplore-1 and click "Consoles"
 
 Run cmake and make:
 
