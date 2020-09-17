@@ -20,9 +20,10 @@ int main() {
     
     PlanSpecification planSpecification;
 
-    //Message fields
-    planSpecification.setTimeStamp(1234);               // Seconds since 01-jan-1970                      
-    planSpecification.setDestination(LAUVXPLORE1);      // specify destination (otherwise DUNE will reject it)
+    
+    //Header fields
+    planSpecification.setTimeStamp(1.5628304294681385E9);       // Seconds since 01-jan-1970                      
+    planSpecification.setDestination(LAUVXPLORE1);              // specify destination (otherwise DUNE will reject it)
     planSpecification.setSource(16652);                 // The Source IMC system ID.
     planSpecification.setSourceEntity(44);              // The entity generating this message at the source address.
     planSpecification.setDestinationEntity(255);        // The entity that should process this message at the destination address.
