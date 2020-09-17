@@ -13,13 +13,14 @@ Dune
 Pull this repository:
 
 ```bash
-git pull
+git pull https://github.com/ivanhkingman/TTK22_homework1
 ```
 
 Open Neptus console:
 
 ```bash
 cd path/to/neptus/neptus/develop
+./neptus.sh
 ```
 
 then in the Neptus GUI menu select: Systems > LAUV-Xplore-1
