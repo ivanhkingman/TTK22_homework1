@@ -36,7 +36,7 @@ Run cmake and make:
 cd path/to/TTK22_homework1/homework_1
 mkdir build
 cd build
-cmake ~/TTK22_homework1
+cmake ..
 make -j2
 ```
 
