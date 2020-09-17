@@ -18,7 +18,7 @@ Neptus
 Pull this repository:
 
 ```bash
-git pull https://github.com/ivanhkingman/TTK22_homework1
+git clone https://github.com/ivanhkingman/TTK22_homework1
 ```
 
 Open Neptus console:
