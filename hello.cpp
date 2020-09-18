@@ -4,6 +4,7 @@
 #include <IMC/Base/Packet.hpp>
 #include <IMC/Base/Factory.cpp>
 #include "UDP/DatagramSocket.cpp"
+#include <writeToFile/writeToFile.cpp>
 #include <iostream>
 #include <vector>
 #define LAUVXPLORE1 (30)

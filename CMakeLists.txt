@@ -14,10 +14,17 @@ file(GLOB_RECURSE IMC_HEADERS "${PROJECT_SOURCE_DIR}/IMC/*.hpp")
 file(GLOB_RECURSE UDP_SOURCES "${PROJECT_SOURCE_DIR}/UDP/DatagramSocket.cpp")
 file(GLOB_RECURSE UDP_HEADERS "${PROJECT_SOURCE_DIR}/UDP/DatagranSocket.hpp")
 
+#List source related with CPP filewrite bindings
+file(GLOB_RECURSE WTF_SOURCES "${PROJECT_SOURCE_DIR}/writeToFile/*.cpp")
+file(GLOB_RECURSE WTF_HEADERS "${PROJECT_SOURCE_DIR}/writeToFile/*.hpp")
+
 #Create static library using all of UDP sources/headers
 add_library(udp ${UDP_HEADERS} ${UDP_SOURCES})
 
 #Create static (by default) library using all of IMC sources/headers
 add_library(imc ${IMC_HEADERS} ${IMC_SOURCES})
+
+#Static library for file writing
+add_library(wtf ${WTF_HEADERS} ${WTF_SOURCES})
 
 add_executable(hello hello.cpp)
