@@ -4,24 +4,18 @@
 #include <IMC/Base/Packet.hpp>
 #include <IMC/Base/Factory.cpp>
 #include "UDP/DatagramSocket.cpp"
-#include <writeToFile/writeToFile.cpp>
+#include <writeToFile/writeToFile.hpp>
 #include <iostream>
 #include <vector>
+#include <fstream>
 #define LAUVXPLORE1 (30)
 using namespace IMC;
 
 int main() {
     char localhost[] = "127.0.0.1";
 
-    Abort abort;
-    abort.setDestination(LAUVXPLORE1);
-    abort.setSource(16652);
-    abort.setTimeStamp(0);
-    abort.setDestinationEntity(255);
-    
     PlanSpecification planSpecification;
 
-    
     //Header fields
     planSpecification.setTimeStamp(1.5628304294681385E9);       // Seconds since 01-jan-1970                      
     planSpecification.setDestination(LAUVXPLORE1);              // specify destination (otherwise DUNE will reject it)
@@ -45,6 +39,9 @@ int main() {
     socket.sendTo(buffer, size, localhost);                     // send message to 127.0.0.1:6002
 
     //TODO: Functionality for writing message to JSON file
+    std::string logFileName = "messageLog.JSON";
+
+    writeToLogFile(logFileName, planSpecification);
 
     std::cout << "Message sent to LAUV-EXPLORE-1" << std::endl;
 }
